@@ -122,12 +122,12 @@ namespace WindowSizer.Forms
                     MessageBox.Show("Y 좌표를 지정해주세요.", "Window Sizer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                else if (int.TryParse(WindowPosX.Text, out temp))
+                else if (!int.TryParse(WindowPosX.Text, out temp))
                 {
                     MessageBox.Show("X 좌표의 값이 올바르지 않습니다.", "Window Sizer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                else if (int.TryParse(WindowPosY.Text, out temp))
+                else if (!int.TryParse(WindowPosY.Text, out temp))
                 {
                     MessageBox.Show("Y 좌표의 값이 올바르지 않습니다.", "Window Sizer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
