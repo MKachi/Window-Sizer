@@ -36,7 +36,7 @@
             this.WindowActive = new System.Windows.Forms.Button();
             this.SelectWindow = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.WindowHideTasktBar = new System.Windows.Forms.CheckBox();
+            this.WindowHideTaskBar = new System.Windows.Forms.CheckBox();
             this.WindowTitleHide = new System.Windows.Forms.CheckBox();
             this.UserSettingMode = new System.Windows.Forms.RadioButton();
             this.FullScreenMode = new System.Windows.Forms.RadioButton();
@@ -64,7 +64,7 @@
             // 
             // WindowSearchBox
             // 
-            this.WindowSearchBox.Location = new System.Drawing.Point(95, 36);
+            this.WindowSearchBox.Location = new System.Drawing.Point(95, 41);
             this.WindowSearchBox.Name = "WindowSearchBox";
             this.WindowSearchBox.Size = new System.Drawing.Size(150, 21);
             this.WindowSearchBox.TabIndex = 3;
@@ -72,18 +72,19 @@
             // Search
             // 
             this.Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Search.Location = new System.Drawing.Point(251, 36);
+            this.Search.Location = new System.Drawing.Point(251, 41);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(43, 21);
             this.Search.TabIndex = 4;
             this.Search.Text = "검색";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // WindowList
             // 
             this.WindowList.FormattingEnabled = true;
             this.WindowList.ItemHeight = 12;
-            this.WindowList.Location = new System.Drawing.Point(12, 63);
+            this.WindowList.Location = new System.Drawing.Point(12, 68);
             this.WindowList.Name = "WindowList";
             this.WindowList.Size = new System.Drawing.Size(282, 172);
             this.WindowList.TabIndex = 5;
@@ -91,56 +92,59 @@
             // WindowMiniSize
             // 
             this.WindowMiniSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WindowMiniSize.Location = new System.Drawing.Point(156, 241);
+            this.WindowMiniSize.Location = new System.Drawing.Point(156, 246);
             this.WindowMiniSize.Name = "WindowMiniSize";
             this.WindowMiniSize.Size = new System.Drawing.Size(66, 24);
             this.WindowMiniSize.TabIndex = 11;
             this.WindowMiniSize.Text = "최소화";
             this.WindowMiniSize.UseVisualStyleBackColor = true;
+            this.WindowMiniSize.Click += new System.EventHandler(this.WindowMiniSize_Click);
             // 
             // WindowActive
             // 
             this.WindowActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WindowActive.Location = new System.Drawing.Point(84, 241);
+            this.WindowActive.Location = new System.Drawing.Point(84, 246);
             this.WindowActive.Name = "WindowActive";
             this.WindowActive.Size = new System.Drawing.Size(66, 24);
             this.WindowActive.TabIndex = 10;
             this.WindowActive.Text = "활성화";
             this.WindowActive.UseVisualStyleBackColor = true;
+            this.WindowActive.Click += new System.EventHandler(this.WindowActive_Click);
             // 
             // SelectWindow
             // 
             this.SelectWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SelectWindow.Location = new System.Drawing.Point(12, 241);
+            this.SelectWindow.Location = new System.Drawing.Point(12, 246);
             this.SelectWindow.Name = "SelectWindow";
             this.SelectWindow.Size = new System.Drawing.Size(66, 24);
             this.SelectWindow.TabIndex = 9;
             this.SelectWindow.Text = "창 선택";
             this.SelectWindow.UseVisualStyleBackColor = true;
+            this.SelectWindow.Click += new System.EventHandler(this.SelectWindow_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 39);
+            this.label1.Location = new System.Drawing.Point(12, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 12);
             this.label1.TabIndex = 14;
             this.label1.Text = "윈도우 이름 :";
             // 
-            // WindowHideTasktBar
+            // WindowHideTaskBar
             // 
-            this.WindowHideTasktBar.AutoSize = true;
-            this.WindowHideTasktBar.Location = new System.Drawing.Point(12, 292);
-            this.WindowHideTasktBar.Name = "WindowHideTasktBar";
-            this.WindowHideTasktBar.Size = new System.Drawing.Size(156, 16);
-            this.WindowHideTasktBar.TabIndex = 16;
-            this.WindowHideTasktBar.Text = "창이 시작 메뉴를 가리기";
-            this.WindowHideTasktBar.UseVisualStyleBackColor = true;
+            this.WindowHideTaskBar.AutoSize = true;
+            this.WindowHideTaskBar.Location = new System.Drawing.Point(12, 297);
+            this.WindowHideTaskBar.Name = "WindowHideTaskBar";
+            this.WindowHideTaskBar.Size = new System.Drawing.Size(156, 16);
+            this.WindowHideTaskBar.TabIndex = 16;
+            this.WindowHideTaskBar.Text = "창이 시작 메뉴를 가리기";
+            this.WindowHideTaskBar.UseVisualStyleBackColor = true;
             // 
             // WindowTitleHide
             // 
             this.WindowTitleHide.AutoSize = true;
-            this.WindowTitleHide.Location = new System.Drawing.Point(12, 271);
+            this.WindowTitleHide.Location = new System.Drawing.Point(12, 276);
             this.WindowTitleHide.Name = "WindowTitleHide";
             this.WindowTitleHide.Size = new System.Drawing.Size(140, 16);
             this.WindowTitleHide.TabIndex = 15;
@@ -150,18 +154,19 @@
             // UserSettingMode
             // 
             this.UserSettingMode.AutoSize = true;
-            this.UserSettingMode.Location = new System.Drawing.Point(169, 291);
+            this.UserSettingMode.Location = new System.Drawing.Point(169, 296);
             this.UserSettingMode.Name = "UserSettingMode";
             this.UserSettingMode.Size = new System.Drawing.Size(127, 16);
             this.UserSettingMode.TabIndex = 18;
             this.UserSettingMode.TabStop = true;
             this.UserSettingMode.Text = "사용자 지정 사이즈";
             this.UserSettingMode.UseVisualStyleBackColor = true;
+            this.UserSettingMode.CheckedChanged += new System.EventHandler(this.UserSettingMode_CheckedChanged);
             // 
             // FullScreenMode
             // 
             this.FullScreenMode.AutoSize = true;
-            this.FullScreenMode.Location = new System.Drawing.Point(169, 270);
+            this.FullScreenMode.Location = new System.Drawing.Point(169, 275);
             this.FullScreenMode.Name = "FullScreenMode";
             this.FullScreenMode.Size = new System.Drawing.Size(87, 16);
             this.FullScreenMode.TabIndex = 17;
@@ -173,7 +178,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(119, 349);
+            this.label3.Location = new System.Drawing.Point(119, 354);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 12);
             this.label3.TabIndex = 40;
@@ -183,7 +188,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(119, 318);
+            this.label4.Location = new System.Drawing.Point(119, 323);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(21, 12);
             this.label4.TabIndex = 39;
@@ -193,7 +198,7 @@
             // 
             this.WindowPosY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WindowPosY.Enabled = false;
-            this.WindowPosY.Location = new System.Drawing.Point(145, 345);
+            this.WindowPosY.Location = new System.Drawing.Point(145, 350);
             this.WindowPosY.Name = "WindowPosY";
             this.WindowPosY.Size = new System.Drawing.Size(58, 21);
             this.WindowPosY.TabIndex = 38;
@@ -202,7 +207,7 @@
             // 
             this.WindowPosX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WindowPosX.Enabled = false;
-            this.WindowPosX.Location = new System.Drawing.Point(145, 314);
+            this.WindowPosX.Location = new System.Drawing.Point(145, 319);
             this.WindowPosX.Name = "WindowPosX";
             this.WindowPosX.Size = new System.Drawing.Size(58, 21);
             this.WindowPosX.TabIndex = 37;
@@ -211,7 +216,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(12, 349);
+            this.label2.Location = new System.Drawing.Point(12, 354);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 12);
             this.label2.TabIndex = 36;
@@ -221,7 +226,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(12, 318);
+            this.label5.Location = new System.Drawing.Point(12, 323);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 12);
             this.label5.TabIndex = 35;
@@ -231,7 +236,7 @@
             // 
             this.WindowHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WindowHeight.Enabled = false;
-            this.WindowHeight.Location = new System.Drawing.Point(54, 345);
+            this.WindowHeight.Location = new System.Drawing.Point(54, 350);
             this.WindowHeight.Name = "WindowHeight";
             this.WindowHeight.Size = new System.Drawing.Size(58, 21);
             this.WindowHeight.TabIndex = 34;
@@ -240,7 +245,7 @@
             // 
             this.WindowWidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WindowWidth.Enabled = false;
-            this.WindowWidth.Location = new System.Drawing.Point(54, 314);
+            this.WindowWidth.Location = new System.Drawing.Point(54, 319);
             this.WindowWidth.Name = "WindowWidth";
             this.WindowWidth.Size = new System.Drawing.Size(58, 21);
             this.WindowWidth.TabIndex = 33;
@@ -248,29 +253,31 @@
             // ApplyButton
             // 
             this.ApplyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ApplyButton.Location = new System.Drawing.Point(219, 342);
+            this.ApplyButton.Location = new System.Drawing.Point(219, 347);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(75, 24);
             this.ApplyButton.TabIndex = 41;
             this.ApplyButton.Text = "적용";
             this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // WindowClose
             // 
             this.WindowClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WindowClose.Location = new System.Drawing.Point(228, 241);
+            this.WindowClose.Location = new System.Drawing.Point(228, 246);
             this.WindowClose.Name = "WindowClose";
             this.WindowClose.Size = new System.Drawing.Size(66, 24);
             this.WindowClose.TabIndex = 42;
             this.WindowClose.Text = "창 종료";
             this.WindowClose.UseVisualStyleBackColor = true;
+            this.WindowClose.Click += new System.EventHandler(this.WindowClose_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(306, 376);
+            this.ClientSize = new System.Drawing.Size(306, 384);
             this.Controls.Add(this.WindowClose);
             this.Controls.Add(this.ApplyButton);
             this.Controls.Add(this.label3);
@@ -283,7 +290,7 @@
             this.Controls.Add(this.WindowWidth);
             this.Controls.Add(this.UserSettingMode);
             this.Controls.Add(this.FullScreenMode);
-            this.Controls.Add(this.WindowHideTasktBar);
+            this.Controls.Add(this.WindowHideTaskBar);
             this.Controls.Add(this.WindowTitleHide);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.WindowMiniSize);
@@ -311,7 +318,7 @@
         private System.Windows.Forms.Button WindowActive;
         private System.Windows.Forms.Button SelectWindow;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox WindowHideTasktBar;
+        private System.Windows.Forms.CheckBox WindowHideTaskBar;
         private System.Windows.Forms.CheckBox WindowTitleHide;
         private System.Windows.Forms.RadioButton UserSettingMode;
         private System.Windows.Forms.RadioButton FullScreenMode;
