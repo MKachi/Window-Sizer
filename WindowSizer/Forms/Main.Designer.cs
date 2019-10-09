@@ -88,6 +88,7 @@
             this.WindowList.Name = "WindowList";
             this.WindowList.Size = new System.Drawing.Size(282, 172);
             this.WindowList.TabIndex = 5;
+            this.WindowList.SelectedIndexChanged += new System.EventHandler(this.WindowList_SelectedIndexChanged);
             // 
             // WindowMiniSize
             // 

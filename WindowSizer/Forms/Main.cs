@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using WindowSizer.Base;
+using System.Linq;
 
 namespace WindowSizer.Forms
 {
@@ -38,17 +39,21 @@ namespace WindowSizer.Forms
 
         private void Search_Click(object sender, EventArgs e)
         {
-            Process[] processes = Process.GetProcessesByName(WindowSearchBox.Text);
+            Process[] processes = Process.GetProcesses();
+            Process[] findProcess = (from process in processes
+                                     where process.MainWindowTitle.Contains(WindowSearchBox.Text)
+                                     select process).ToArray();
+
             _windows.Clear();
             WindowList.Items.Clear();
 
-            if (processes.Length > 0)
+            if (findProcess.Length > 0)
             {
-                for (int i = 0; i < processes.Length; ++i)
+                for (int i = 0; i < findProcess.Length; ++i)
                 {
-                    string name = processes[i].MainWindowTitle + $" [PID : {processes[i].Id}]";
+                    string name = findProcess[i].MainWindowTitle + $" [PID : {findProcess[i].Id}]";
                     WindowList.Items.Add(name);
-                    _windows.Add(new WindowInfo(processes[i].MainWindowHandle, processes[i]));
+                    _windows.Add(new WindowInfo(findProcess[i].MainWindowHandle, findProcess[i]));
                 }
             }
         }
@@ -140,6 +145,15 @@ namespace WindowSizer.Forms
                 WindowLib.SetWindowSize(_selectedHandle, int.Parse(WindowWidth.Text), int.Parse(WindowHeight.Text), int.Parse(WindowPosX.Text), int.Parse(WindowPosY.Text), WindowTitleHide.Checked);
                 return;
             }
+        }
+
+        private void WindowList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_windows.Count <= WindowList.SelectedIndex)
+            {
+                return;
+            }
+            _selectedHandle = _windows[WindowList.SelectedIndex].Handle;
         }
     }
 }
